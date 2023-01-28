@@ -1,30 +1,48 @@
-import { Button, Text } from "@chakra-ui/react";
-import { useAccount, useBalance, useNetwork } from "wagmi";
-import { disconnect } from "@wagmi/core";
+import {
+  Box,
+  Container,
+  Flex,
+  Tab,
+  TabList,
+  TabPanel,
+  TabPanels,
+  Tabs,
+  Text,
+} from "@chakra-ui/react";
+import { useAccount } from "wagmi";
 import WalletConnect from "components/WalletConnect";
 import SendTransaction from "components/SendTransaction";
+import Profile from "components/Profile";
 
 function Home() {
-  const { isConnected, address } = useAccount();
-  const { chain } = useNetwork();
-  const { data } = useBalance({
-    address,
-  });
-
-  async function handleOnDisconnect() {
-    await disconnect();
-  }
-
+  const { isConnected } = useAccount();
   return (
-    <div>
-      <WalletConnect />
-      <SendTransaction />
-      {isConnected ? "Connected" : "NOT Connected"}
-      <Text>Chain ID: {chain?.id}</Text>
-      <Text>Chain name: {chain?.name}</Text>
-      <Text>Balance: {data?.formatted}</Text>
-      <Button onClick={handleOnDisconnect}>Disconnect</Button>
-    </div>
+    <Box paddingY="4">
+      <Container>
+        <Flex alignItems="center" justifyContent="space-between">
+          <Text color="#ff4e17">Malconomy</Text>
+          <WalletConnect />
+        </Flex>
+        {isConnected ? (
+          <Tabs>
+            <TabList>
+              <Tab>Profile</Tab>
+              <Tab>Send</Tab>
+            </TabList>
+            <TabPanels>
+              <TabPanel>
+                <Profile />
+              </TabPanel>
+              <TabPanel>
+                <SendTransaction />
+              </TabPanel>
+            </TabPanels>
+          </Tabs>
+        ) : (
+          <Text textAlign="center">Connect your wallet</Text>
+        )}
+      </Container>
+    </Box>
   );
 }
 

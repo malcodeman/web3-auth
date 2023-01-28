@@ -104,10 +104,9 @@ function SendTransaction() {
 
   return (
     <form onSubmit={form.handleSubmit(handleOnSubmit)}>
-      <FormControl isInvalid={Boolean(form.formState.errors.recipient)}>
+      <FormControl mb="2" isInvalid={Boolean(form.formState.errors.recipient)}>
         <FormLabel>Recipient</FormLabel>
         <Input
-          defaultValue="test"
           {...form.register("recipient")}
           onChange={(e) => setDebouncedRecipient(e.currentTarget.value)}
         />
@@ -115,7 +114,7 @@ function SendTransaction() {
           {form.formState.errors.recipient?.message}
         </FormErrorMessage>
       </FormControl>
-      <FormControl isInvalid={Boolean(form.formState.errors.amount)}>
+      <FormControl mb="2" isInvalid={Boolean(form.formState.errors.amount)}>
         <FormLabel>Amount</FormLabel>
         <Input
           {...form.register("amount")}
@@ -127,6 +126,7 @@ function SendTransaction() {
       </FormControl>
       <Button
         type="submit"
+        width="full"
         isLoading={waitForTransaction.isLoading}
         isDisabled={!sendTransaction.sendTransaction}
       >
