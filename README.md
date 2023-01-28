@@ -7,6 +7,10 @@ Simple web3 authentication.
 
 ![Screenshot](readme/screenshot.png)
 
+## Obtain Project ID
+
+Head over to [WalletConnect Cloud](https://cloud.walletconnect.com) to sign in or sign up. Create (or use an existing) project and copy its associated Project ID.
+
 ## Getting started
 
 ```
