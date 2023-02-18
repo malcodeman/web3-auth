@@ -1,9 +1,17 @@
-# [malconomy](https://malconomy.vercel.app)
+<div align="center">
 
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/malcodeman/web3-auth/blob/master/LICENSE)
 
-Simple web3 authentication.
+</div>
+<br />
+<div align="center"><strong>malconomy</strong></div>
+<div align="center">Simple web3 authentication.</div>
+<br />
+<div align="center">
+  <sub>Coded by <a href="https://malcodeman.com">malcodeman</a> 👨‍🚀</sub>
+</div>
+<br />
 
 ![Screenshot](readme/screenshot.png)
 
